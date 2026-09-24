@@ -10,8 +10,8 @@ class Pizza {
             throw new Error("A classe Pizza é abstrata.")
         }
 
-        this._sabor = sabor
-        this._preco = preco
+        this.sabor = sabor
+        this.preco = preco
 
         Pizza.quantidade++
     }
@@ -21,15 +21,15 @@ class Pizza {
     }
 
     set sabor(novoSabor) {
-        this._sabor = novoSabor
+        this.sabor = novoSabor
     }
 
     get preco() {
-        return this._preco
+        return this.preco
     }
 
     set preco(novoPreco) {
-        this._preco = novoPreco
+        this.preco = novoPreco
     }
 
     mostrarPizza() {
@@ -88,13 +88,13 @@ class PizzaFactory {
 class Pedido {
 
     constructor(cliente) {
-        this._cliente = cliente
-        this._pizzas = []
+        this.cliente = cliente
+        this.pizzas = []
     }
 
     
     adicionarPizza(pizza) {
-        this._pizzas.push(pizza)
+        this.pizzas.push(pizza)
     }
 
 
@@ -112,7 +112,7 @@ class Pedido {
     mostrarPedido() {
 
         console.log("PEDIDO")
-        console.log("Cliente:", this._cliente)
+        console.log("Cliente:", this.cliente)
 
         for (let pizza of this._pizzas) {
             console.log(pizza.mostrarPizza())
