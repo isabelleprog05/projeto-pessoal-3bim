@@ -21,15 +21,15 @@ class Pizza {
     }
 
     set sabor(novoSabor) {
-        this.sabor = novoSabor
+        this._sabor = novoSabor
     }
 
     get preco() {
-        return this.preco
+        return this._preco
     }
 
     set preco(novoPreco) {
-        this.preco = novoPreco
+        this._preco = novoPreco
     }
 
     mostrarPizza() {
