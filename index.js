@@ -3,33 +3,33 @@ const prompt = require("prompt-sync")()
 class Pizza {
 
     constructor(cliente, sabor, preco) {
-        this.cliente = cliente
-        this.sabor = sabor
-        this.preco = preco
+        this._cliente = cliente
+        this._sabor = sabor
+        this._preco = preco
     }
 
     get cliente() {
-        return this.cliente
+        return this._cliente
     }
 
     set cliente(novoCliente) {
-        this.cliente = novoCliente
+        this._cliente = novoCliente
     }
 
     get sabor() {
-        return this.sabor
+        return this._sabor
     }
 
     set sabor(novoSabor) {
-        this.sabor = novoSabor
+        this._sabor = novoSabor
     }
 
     get preco() {
-        return this.preco
+        return this._preco
     }
 
     set preco(novoPreco) {
-        this.preco = novoPreco
+        this._preco = novoPreco
     }
 
     mostrarPedido() {
@@ -67,10 +67,17 @@ if (opcao === 1) {
     sabor = "Mussarela Grande"
     preco = 38
 } else {
+    console.log("")
     console.log("Opção inválida!")
 }
 
 if (sabor) {
-    let pizza = new Pizza(cliente, sabor, preco)
-   pizza.mostrarPedido()
+
+    const pizza = new Pizza(
+        cliente,
+        sabor,
+        preco
+    )
+
+    pizza.mostrarPedido()
 }
